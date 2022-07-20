@@ -10,7 +10,6 @@ export const Container = styled.div<props>`
     flex: 1;
     flex-direction: row;
     align-items: center;
-    padding-right: 4rem;
 `;
 
 export const ButtonsContainer = styled.div`
