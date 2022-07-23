@@ -8,5 +8,6 @@ export { MenuButton } from "./menuButton";
 export { MoreButton } from "./moreButton";
 export { PageGrid } from "./pageGrid";
 export { SearchBar } from "./searchBar";
+export { Switch } from "./switch";
 export { Toolbar } from "./toolbar";
 
