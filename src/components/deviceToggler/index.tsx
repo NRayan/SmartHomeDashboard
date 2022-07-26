@@ -1,20 +1,22 @@
 import { IconType } from "react-icons/lib";
-import { Container, Header } from "./styles";
 import { Switch } from "../";
+import { Container, Header, Title } from "./styles";
 
 type props = {
 	gridArea: string;
 	color: string;
-	Icon: IconType
+	Icon: IconType;
+	title: string;
 }
 
-export function DeviceToggler({ gridArea, color, Icon }: props) {
+export function DeviceToggler({  gridArea, color, title, Icon }: props) {
 	return (
 		<Container gridArea={gridArea} color={color}>
 			<Header>
 				<Icon size={24} color="#FFF" />
 				<Switch color={color} />
 			</Header>
+			<Title>{title}</Title>
 		</Container>
 	);
 }
