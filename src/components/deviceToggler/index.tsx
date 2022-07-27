@@ -13,7 +13,7 @@ export function DeviceToggler({  gridArea, color, title, Icon }: props) {
 	return (
 		<Container gridArea={gridArea} color={color}>
 			<Header>
-				<Icon size={24} color="#FFF" />
+				<Icon size="2.8rem" color="#FFF" />
 				<Switch color={color} />
 			</Header>
 			<Title>{title}</Title>

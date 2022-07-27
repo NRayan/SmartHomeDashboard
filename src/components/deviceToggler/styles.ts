@@ -11,7 +11,7 @@ export const Container = styled.div<props>`
     background-color: ${({ color }) => color};
     background-image: linear-gradient(to bottom right,${({ color }) => lighten(.15, color)},${({ color }) => color});
     flex: 1;
-    justify-content: space-around;
+    justify-content: space-evenly;
     border-radius: 15px;
     padding: 0 1.5rem;
 `;

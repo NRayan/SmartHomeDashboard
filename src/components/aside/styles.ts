@@ -6,7 +6,9 @@ type props = {
 
 export const Container = styled.section<props>`
     grid-area: ${({ gridArea }) => gridArea};
+    display: flex;
+    flex-direction: column;
     flex: 1;
-    justify-content: center;
-    align-items: center;
+    row-gap: 2rem;
+    margin-bottom: 3rem;
 `;
