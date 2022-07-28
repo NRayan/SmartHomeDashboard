@@ -1,10 +1,15 @@
-import React from "react";
+import { Weather } from "../weather";
 import { Container } from "./styles";
 
-export function Main() {
+
+type props = {
+	gridArea: string;
+}
+
+export function Main({ gridArea }: props) {
 	return (
-		<Container>
-            
+		<Container gridArea={gridArea}>
+			<Weather />
 		</Container>
 	);
 }

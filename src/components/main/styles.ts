@@ -1,6 +1,11 @@
 import styled from "styled-components";
 
-export const Container = styled.main`
+type props = {
+    gridArea: string;
+}
+
+export const Container = styled.section<props>`
 display: flex;
+flex-direction: column;
 flex: 1;
 `;

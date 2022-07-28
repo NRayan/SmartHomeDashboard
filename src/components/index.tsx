@@ -1,4 +1,5 @@
 export { Aside } from "./aside";
+export { Chart } from "./chart";
 export { Devices } from "./devices";
 export { DeviceToggler } from "./deviceToggler";
 export { LetterLabel } from "./letterLabel";
@@ -12,4 +13,5 @@ export { Power } from "./power";
 export { SearchBar } from "./searchBar";
 export { Switch } from "./switch";
 export { Toolbar } from "./toolbar";
+export { Weather } from "./weather";
 

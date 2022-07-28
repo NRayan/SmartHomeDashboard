@@ -1,5 +1,5 @@
-import React from "react";
 import { SectionTitle, SectionTitleContainer } from "../../styles";
+import { Chart } from "../chart";
 import { MoreButton } from "../moreButton";
 import { Container, PowerContainer } from "./styles";
 
@@ -11,7 +11,7 @@ export function Power() {
 				<MoreButton />
 			</SectionTitleContainer>
 			<PowerContainer>
-
+				<Chart />
 			</PowerContainer>
 		</Container>
 	);
