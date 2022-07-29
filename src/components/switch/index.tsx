@@ -1,22 +1,18 @@
-import { useState } from "react";
-import { CheckBox, CheckBoxLabel, CheckBoxWrapper, Container, Title } from "./styles";
+import { CheckBox, CheckBoxLabel, CheckBoxWrapper } from "./styles";
 
 type props =
 	{
 		color: string;
+		on: boolean;
+		onSwitch: () => void
 	}
 
-export function Switch({ color }: props) {
-
-	const [on, setOn] = useState<boolean>(true);
+export function Switch({ color, on, onSwitch }: props) {
 
 	return (
-		<Container>
-			<Title>{on ? "ON" : "OFF"}</Title>
-			<CheckBoxWrapper>
-				<CheckBox color={color} id="checkbox" type="checkbox" defaultChecked={on} onChange={() => setOn(prevstate => !prevstate)} />
-				<CheckBoxLabel htmlFor="checkbox" color={color} />
-			</CheckBoxWrapper>
-		</Container>
+		<CheckBoxWrapper>
+			<CheckBox color={color} id="checkbox" type="checkbox" defaultChecked={on} onChange={onSwitch} />
+			<CheckBoxLabel htmlFor="checkbox" color={color} />
+		</CheckBoxWrapper>
 	);
 }

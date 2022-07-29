@@ -19,3 +19,9 @@ height: 3.5rem;
 aspect-ratio: 1;
 object-fit: contain;
 `;
+
+export const SwitchLabel = styled.label`
+    font-size: 1.2rem;
+    color: ${({ theme }) => transparentize(.2, theme.colors.text)};
+    font-weight: 500;
+`;

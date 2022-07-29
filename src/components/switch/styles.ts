@@ -7,17 +7,6 @@ type props =
     color: string;
   }
 
-export const Container = styled.div`
-  flex-direction: row;
-  align-items: center;
-  column-gap: .8rem;
-`;
-
-export const Title = styled.label`
-  font-size: 1.2rem;
-  color: #fff;
-`;
-
 export const CheckBoxWrapper = styled.div`
   position: relative;
 `;

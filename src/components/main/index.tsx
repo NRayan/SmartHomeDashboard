@@ -1,5 +1,5 @@
-import { Temperature } from "../temperature";
-import { Weather } from "../weather";
+
+import { TemperatureController, Temperatures, Weather } from "..";
 import { Container } from "./styles";
 
 
@@ -11,7 +11,8 @@ export function Main({ gridArea }: props) {
 	return (
 		<Container gridArea={gridArea}>
 			<Weather />
-			<Temperature />
+			<Temperatures />
+			<TemperatureController />
 		</Container>
 	);
 }

@@ -26,3 +26,9 @@ export const Title = styled.h2`
     color:${({ theme }) => theme.colors.text};
     font-weight: 300;
 `;
+
+export const SwitchContainer = styled.div`
+    flex-direction: row;
+    align-items: center;
+    column-gap: .5rem;
+`;
