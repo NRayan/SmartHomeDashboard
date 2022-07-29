@@ -4,7 +4,7 @@ type props = {
     gridArea: string;
 }
 
-export const Container = styled.section<props>`
+export const Container = styled.main<props>`
 display: flex;
 flex-direction: column;
 flex: 1;

@@ -14,4 +14,5 @@ export { SearchBar } from "./searchBar";
 export { Switch } from "./switch";
 export { Toolbar } from "./toolbar";
 export { Weather } from "./weather";
+export { Temperature } from "./temperature";
 
