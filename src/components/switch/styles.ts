@@ -34,7 +34,7 @@ export const CheckBoxLabel = styled.label<props>`
 `;
 
 export const CheckBox = styled.input<props>`
-cursor: pointer;
+  cursor: ${({ disabled }) => disabled ? "default" : "pointer"};
   opacity: 0;
   z-index: 1;
   border-radius: 15px;

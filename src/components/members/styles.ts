@@ -9,6 +9,7 @@ export const AvatarsContainer = styled.div`
     flex-direction: row;
     justify-content: space-around;
     padding: 2rem 3rem;
+    border: ${({ theme }) => theme.defaultBorder};
 `;
 
 export const AvatarContainer = styled.div`

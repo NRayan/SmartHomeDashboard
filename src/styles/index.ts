@@ -21,7 +21,7 @@ object-fit: contain;
 `;
 
 export const SwitchLabel = styled.label`
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: ${({ theme }) => transparentize(.2, theme.colors.text)};
-    font-weight: 500;
+    font-weight: 400;
 `;

@@ -2,10 +2,11 @@ export type ThemeProps = {
     colors: {
         background: string,
         primary: string,
-        stoke:string,
-        text: string
+        text: string,
+        text_Secondary: string
     },
-    boxShadow:string
+    boxShadow: string,
+    defaultBorder: string
 }
 
 export const theme: ThemeProps =
@@ -13,8 +14,9 @@ export const theme: ThemeProps =
 	colors: {
 		background: "#121220",
 		primary: "#007EF5",
-		stoke: "#26243F",
-		text: "#FFF"
+		text: "#FFF",
+		text_Secondary: "#8A88B7"
 	},
-	boxShadow:"0px 0px 10px 0px #26243F"
+	boxShadow: "-7px -7px 15px 0px #211F37",
+	defaultBorder: "1px solid #1C1B2F"
 };

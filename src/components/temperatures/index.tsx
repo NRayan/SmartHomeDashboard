@@ -9,14 +9,14 @@ import { Container, TemperatureIconContainer, TemperatureIconsContainer, Tempera
 
 export function Temperatures() {
 
-	const { bedroom1T, bedroom2T, livingRoomT, kitchenT, switchTemperatureOn } = useContext(SmartHomeContext);
+	const { rooms} = useContext(SmartHomeContext);
 
-	function handleSwitch(id:number) {
+	function handleSwitch(id: number) {
 		switchTemperatureOn(id);
 	}
 
-	function handleClick() {
-		console.log(1);
+	function handleClick(id: number) {
+		setSelectedRoom(id);
 	}
 
 	return (
@@ -40,10 +40,18 @@ export function Temperatures() {
 			</SectionTitleContainer>
 
 			<TemperatureSwitchesContainer>
-				<TemperatureSwitch on={kitchenT.on} title="Kitchen" onclick={handleClick} onSwitch={()=>{handleSwitch(1);}} Icon={MdKitchen} />
-				<TemperatureSwitch on={bedroom1T.on} title="Bedroom 1" onclick={handleClick} onSwitch={()=>{handleSwitch(2);}} Icon={MdOutlineBed} />
-				<TemperatureSwitch on={bedroom2T.on} title="Bedroom 2" onclick={handleClick} onSwitch={()=>{handleSwitch(3);}} Icon={MdOutlineBed} />
-				<TemperatureSwitch on={livingRoomT.on} title="Living room" onclick={handleClick} onSwitch={()=>{handleSwitch(4);}} Icon={BiSlideshow} />
+
+				{
+					rooms.map(room=>(
+						<TemperatureSwitch room={room}/>
+					))
+				}
+
+
+				{/* <TemperatureSwitch id={1} selected={selectedRoom.id===1} on={kitchenT.on} title="Kitchen" onClick={handleClick} onSwitch={handleSwitch} Icon={MdKitchen} />
+				<TemperatureSwitch id={2} selected={selectedRoom.id===2} on={bedroom1T.on} title="Bedroom 1" onClick={handleClick} onSwitch={handleSwitch} Icon={MdOutlineBed} />
+				<TemperatureSwitch id={3} selected={selectedRoom.id===3} on={bedroom2T.on} title="Bedroom 2" onClick={handleClick} onSwitch={handleSwitch} Icon={MdOutlineBed} />
+				<TemperatureSwitch id={4} selected={selectedRoom.id===4} on={livingRoomT.on} title="Living room" onClick={handleClick} onSwitch={handleSwitch} Icon={BiSlideshow} /> */}
 			</TemperatureSwitchesContainer>
 		</Container>
 	);

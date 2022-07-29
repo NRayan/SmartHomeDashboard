@@ -16,6 +16,7 @@ background-image: ${({ backgroundPath }) => `url(${backgroundPath})`};
 background-position: right;
 background-repeat: no-repeat;
 background-size: contain;
+border: ${({ theme }) => theme.defaultBorder};
 `;
 
 export const Title = styled.h1`

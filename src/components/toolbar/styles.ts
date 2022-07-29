@@ -26,6 +26,7 @@ width: 4rem;
 border-radius: 25%;
 box-shadow: ${({ theme }) => theme.boxShadow};
 margin-right: 3rem;
+border: ${({ theme }) => theme.defaultBorder};
 `;
 
 export const Avatar = styled.img`

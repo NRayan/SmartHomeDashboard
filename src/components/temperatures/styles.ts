@@ -22,5 +22,6 @@ export const Value = styled.p`
 
 export const TemperatureSwitchesContainer = styled.div`
     flex-direction: row;
-    column-gap: 1rem;
+    justify-content: space-between;
+    column-gap: 3rem;
 `;

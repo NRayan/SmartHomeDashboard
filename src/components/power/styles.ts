@@ -11,4 +11,5 @@ export const PowerContainer = styled.div`
     flex: 1;
     box-shadow: ${({ theme }) => theme.boxShadow};
     border-radius:15px;
+    border: ${({ theme }) => theme.defaultBorder};
 `;

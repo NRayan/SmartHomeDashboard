@@ -4,14 +4,15 @@ type props =
 	{
 		color: string;
 		on: boolean;
-		onSwitch: () => void
+		onSwitch?: () => void;
+		disabled?: boolean
 	}
 
-export function Switch({ color, on, onSwitch }: props) {
+export function Switch({ color, on, onSwitch, disabled = false }: props) {
 
 	return (
 		<CheckBoxWrapper>
-			<CheckBox color={color} id="checkbox" type="checkbox" defaultChecked={on} onChange={onSwitch} />
+			<CheckBox disabled={disabled} color={color} id="checkbox" type="checkbox" defaultChecked={on} onChange={onSwitch} />
 			<CheckBoxLabel htmlFor="checkbox" color={color} />
 		</CheckBoxWrapper>
 	);

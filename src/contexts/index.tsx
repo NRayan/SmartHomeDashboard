@@ -1,17 +1,11 @@
 import { createContext, ReactNode, useState } from "react";
-
-type temperatureProps = {
-	id: number,
-	on: boolean,
-	temperature: number
-}
+import { mockedRooms } from "../mock";
+import { roomType } from "../types";
 
 type temperatureContextData = {
-	kitchenT: temperatureProps,
-	bedroom1T: temperatureProps,
-	bedroom2T: temperatureProps,
-	livingRoomT: temperatureProps,
-	switchTemperatureOn: (id: number) => void
+	rooms: roomType[]
+	changeSelected: (id: number) => void,
+	updateRoom: (newRoomState: roomType) => void,
 }
 
 type Props = {
@@ -22,38 +16,33 @@ export const SmartHomeContext = createContext({} as temperatureContextData);
 
 export function SmartHomeContextProvider({ children }: Props) {
 
-	const [kitchenT, setKitchenT] = useState<temperatureProps>({ id: 1, on: false, temperature: 35 });
-	const [bedroom1T, setBedroom1T] = useState<temperatureProps>({ id: 2, on: false, temperature: 35 });
-	const [bedroom2T, setBedroom2T] = useState<temperatureProps>({ id: 3, on: false, temperature: 35 });
-	const [livingRoomT, setLivingRoomT] = useState<temperatureProps>({ id: 4, on: false, temperature: 35 });
+	const [rooms, setRooms] = useState<roomType[]>(mockedRooms);
 
-	function switchTemperatureValue(id: number) {
-		switch (id) {
-		case 1:
-			setKitchenT({ ...kitchenT, on: !kitchenT.on });
-			break;
-		case 2:
-			setBedroom1T({ ...bedroom1T, on: !bedroom1T.on });
-			break;
-		case 3:
-			setBedroom2T({ ...bedroom2T, on: !bedroom2T.on });
-			break;
-		case 4:
-			setLivingRoomT({ ...livingRoomT, on: !livingRoomT.on });
-			break;
+	function handleRoomUpdate(room: roomType) {
+		const selectedRoom = rooms.find(x => x.id === room.id);
+		const index = selectedRoom && rooms.indexOf(selectedRoom);
+		if (!index) return;
+		const newArr = [...rooms];
+		newArr[index] = room;
+		setRooms(newArr);
+	}
 
-		default:
-			break;
+	function handleSelectedRoomUpdate(id: number) {
+		const selectedRoom = rooms.find(x => x.id === id);
+		const index = selectedRoom && rooms.indexOf(selectedRoom);
+		const newArr = [...rooms];
+		newArr.forEach(x => x.selected = false);
+		if (index != undefined) {
+			newArr[index].selected = true;
+			setRooms(newArr);
 		}
 	}
 
 	return (
 		<SmartHomeContext.Provider value={{
-			kitchenT: kitchenT,
-			bedroom1T: bedroom1T,
-			bedroom2T: bedroom2T,
-			livingRoomT: livingRoomT,
-			switchTemperatureOn: switchTemperatureValue
+			rooms: rooms,
+			updateRoom: handleRoomUpdate,
+			changeSelected: handleSelectedRoomUpdate
 		}}>
 			{children}
 		</SmartHomeContext.Provider>

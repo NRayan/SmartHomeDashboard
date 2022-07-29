@@ -14,4 +14,5 @@ padding-top: 20%;
 align-items: center;
 border-radius: 0 25px 0 0;
 box-shadow: ${({ theme }) => theme.boxShadow};
+border: ${({ theme }) => theme.defaultBorder};
 `;

@@ -16,6 +16,7 @@ export const InputContainer = styled.div`
     box-shadow: ${({ theme }) => theme.boxShadow};
     padding: 10px 15px;
     border-radius: 10px;
+    border: ${({ theme }) => theme.defaultBorder};
 `;
 
 export const Input = styled.input`
