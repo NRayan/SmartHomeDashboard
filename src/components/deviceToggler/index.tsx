@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { IconType } from "react-icons/lib";
-import { Switch } from "../";
 import { SwitchLabel } from "../../styles";
+import { Toggle } from "../toggle";
 import { Container, Header, SwitchContainer, Title } from "./styles";
 
 type props = {
@@ -21,7 +21,7 @@ export function DeviceToggler({ gridArea, color, title, Icon }: props) {
 				<Icon size="2.8rem" color="#FFF" />
 				<SwitchContainer>
 					<SwitchLabel>{on ? "ON" : "OFF"}</SwitchLabel>
-					<Switch color={color} on={on} onSwitch={() => setOn(prevstate => !prevstate)} />
+					<Toggle on={on} onChange={()=>setOn(!on)} fillColor="white" dotColor={color} disabledFillColor={"rgba(255,255,255,.6)"} />
 				</SwitchContainer>
 			</Header>
 			<Title>{title}</Title>

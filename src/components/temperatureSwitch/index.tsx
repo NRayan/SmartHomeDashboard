@@ -1,9 +1,10 @@
+import { transparentize } from "polished";
 import { useContext } from "react";
+import { MdToggleOff, MdToggleOn } from "react-icons/md";
 import { useTheme } from "styled-components";
 import { SmartHomeContext } from "../../contexts";
 import { SwitchLabel } from "../../styles";
 import { roomType } from "../../types";
-import { Switch } from "../switch";
 import { Container, Header, Title } from "./styles";
 
 type props =
@@ -18,6 +19,8 @@ export function TemperatureSwitch({ room }: props) {
 
 	const { primary } = useTheme().colors;
 
+	const toggleColor = selected ? "#FFF" : transparentize(.7, primary);
+
 	function handleClick() {
 		!selected && changeSelected(id);
 	}
@@ -26,7 +29,13 @@ export function TemperatureSwitch({ room }: props) {
 		<Container selected={selected} onClick={handleClick}>
 			<Header>
 				<SwitchLabel>{on ? "ON" : "OFF"}</SwitchLabel>
-				<Switch on={on} color={primary} />
+				{
+					on ?
+						<MdToggleOn size={32} color={toggleColor} />
+						:
+						<MdToggleOff size={32} color={toggleColor} />
+				}
+				{/* <Switch on={on} color={primary} /> */}
 			</Header>
 			<Icon color="#FFF" size="3rem" />
 			<Title>{title}</Title>

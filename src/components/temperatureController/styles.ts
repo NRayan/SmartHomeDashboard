@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
 flex: 1;
+background-color: ${({ theme }) => theme.colors.background_Secondarys};
 box-shadow: ${({ theme }) => theme.boxShadow};
 width: 100%;
 padding: 2rem;
@@ -22,6 +23,11 @@ export const Title = styled.h3`
     font-weight: 400;
 `;
 
+export const SwitchContainer = styled.div`
+    flex-direction: row;
+    column-gap: 1rem;
+`;
+
 export const ControllerContainer = styled.div`
     flex: 1;
     flex-direction: row;
@@ -29,7 +35,7 @@ export const ControllerContainer = styled.div`
     align-items: center;
 `;
 
-export const Button = styled.button`
+export const Button = styled.button<{ activeColor: string }>`
     height:7rem;
     aspect-ratio: 1;
     border-radius: 1.8rem;
@@ -41,12 +47,12 @@ export const Button = styled.button`
     transition: background-color 100ms linear;
 
     &:hover {
-        background-color: ${({ theme }) => transparentize(.8, theme.colors.primary)} 
+        background-color: ${({ activeColor }) => transparentize(.8, activeColor)} 
     }
     
     &:active
     {
-        background-color: ${({ theme }) => transparentize(.3, theme.colors.primary)}
+        background-color: ${({ activeColor }) => transparentize(.4, activeColor)}
     }    
 `;
 

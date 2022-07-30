@@ -5,6 +5,7 @@ type props = {
 }
 
 export const Container = styled.aside<props>`
+background-color: ${({ theme }) => theme.colors.background_Secondarys};
 grid-area: ${({ gridArea }) => gridArea};
 height: 100%;
 display: flex;

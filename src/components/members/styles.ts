@@ -4,6 +4,7 @@ import styled from "styled-components";
 export const Container = styled.div``;
 
 export const AvatarsContainer = styled.div`
+    background-color: ${({ theme }) => theme.colors.background_Secondarys};
     box-shadow: ${({ theme }) => theme.boxShadow};
     border-radius: 15px;
     flex-direction: row;

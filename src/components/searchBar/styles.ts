@@ -17,6 +17,7 @@ export const InputContainer = styled.div`
     padding: 10px 15px;
     border-radius: 10px;
     border: ${({ theme }) => theme.defaultBorder};
+    background-color: ${({ theme }) => theme.colors.background_Secondarys};
 `;
 
 export const Input = styled.input`

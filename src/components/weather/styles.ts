@@ -9,6 +9,7 @@ type props =
 export const Container = styled.div<props>`
 position: relative;
 width: 100%;
+background-color: ${({ theme }) => theme.colors.background_Secondarys};
 box-shadow: ${({ theme }) => theme.boxShadow};
 border-radius: 15px;
 padding: 2rem 3rem;

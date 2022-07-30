@@ -24,7 +24,7 @@ export const Header = styled.div`
 export const Title = styled.h2`
     font-size: 1.6rem;
     color:${({ theme }) => theme.colors.text};
-    font-weight: 300;
+    font-weight: 400;
 `;
 
 export const SwitchContainer = styled.div`

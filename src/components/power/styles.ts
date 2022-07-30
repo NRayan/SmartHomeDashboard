@@ -9,6 +9,7 @@ export const Container = styled.section`
 
 export const PowerContainer = styled.div`
     flex: 1;
+    background-color: ${({ theme }) => theme.colors.background_Secondarys};
     box-shadow: ${({ theme }) => theme.boxShadow};
     border-radius:15px;
     border: ${({ theme }) => theme.defaultBorder};

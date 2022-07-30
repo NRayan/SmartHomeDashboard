@@ -27,6 +27,7 @@ border-radius: 25%;
 box-shadow: ${({ theme }) => theme.boxShadow};
 margin-right: 3rem;
 border: ${({ theme }) => theme.defaultBorder};
+background-color: ${({ theme }) => theme.colors.background_Secondarys};
 `;
 
 export const Avatar = styled.img`

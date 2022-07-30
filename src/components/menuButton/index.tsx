@@ -11,7 +11,7 @@ type props =
 		onClick: () => void
 	}
 
-const iconSize = 32;
+const iconSize = 28;
 
 export function MenuButton({ Icon, SelectedIcon, selected, onClick }: props) {
 

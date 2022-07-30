@@ -17,6 +17,7 @@ export const Container = styled.button<props>`
     box-shadow: ${({ theme }) => theme.boxShadow};
     row-gap: 1.5rem;
     border: ${({ theme }) => theme.defaultBorder};
+    background-color: ${({ theme }) => theme.colors.background_Secondarys};
     background-image: ${({ selected, theme }) => selected ? `linear-gradient(to bottom left,${theme.colors.primary},${lighten(.15, theme.colors.primary)})` : "none"};
 `;
 

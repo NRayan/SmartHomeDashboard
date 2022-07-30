@@ -1,6 +1,7 @@
 export type ThemeProps = {
     colors: {
         background: string,
+        background_Secondarys:string,
         primary: string,
         text: string,
         text_Secondary: string
@@ -13,6 +14,7 @@ export const theme: ThemeProps =
 {
 	colors: {
 		background: "#121220",
+		background_Secondarys:"#151423",
 		primary: "#007EF5",
 		text: "#FFF",
 		text_Secondary: "#8A88B7"
