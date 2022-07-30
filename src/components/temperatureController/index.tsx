@@ -8,11 +8,21 @@ import { Button, Celcius, Container, ControllerContainer, Header, Temperature, T
 
 export function TemperatureController() {
 
-	const { rooms } = useContext(SmartHomeContext);
+	const { rooms, updateRoom } = useContext(SmartHomeContext);
 
 	const selectedRoom = rooms.find(room => room.selected);
 
 	const { primary, text } = useTheme().colors;
+
+	function handleSwitchChange() {
+		if (selectedRoom === undefined) return;
+		updateRoom({ ...selectedRoom, on: !selectedRoom.on });
+	}
+
+	function handleUpdateTemperatureClick(increase: boolean) {
+		if (selectedRoom === undefined) return;
+		updateRoom({ ...selectedRoom, temperature: selectedRoom.temperature + (increase ? 1 : -1) });
+	}
 
 	return (
 		<Container>
@@ -21,11 +31,11 @@ export function TemperatureController() {
 				<>
 					<Header>
 						<Title>{selectedRoom.title} Temperature</Title>
-						<Switch on={selectedRoom.on} color={primary} disabled/>
+						<Switch on={selectedRoom.on} color={primary} onSwitch={handleSwitchChange} />
 					</Header>
 
 					<ControllerContainer>
-						<Button>
+						<Button onClick={() => handleUpdateTemperatureClick(false)}>
 							<FaMinus size="2rem" color={text} />
 						</Button>
 
@@ -38,7 +48,7 @@ export function TemperatureController() {
 							</TemperatureIndicator>
 						</TemperatureIndicatorContainer>
 
-						<Button>
+						<Button onClick={() => handleUpdateTemperatureClick(true)}>
 							<BsPlusLg size="2rem" color={text} />
 						</Button>
 					</ControllerContainer>

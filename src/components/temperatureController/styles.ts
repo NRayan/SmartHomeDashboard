@@ -1,4 +1,4 @@
-import { darken } from "polished";
+import { darken, transparentize } from "polished";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -38,6 +38,16 @@ export const Button = styled.button`
     align-items: center;
     box-shadow: ${({ theme }) => theme.boxShadow};
     border: ${({ theme }) => theme.defaultBorder};
+    transition: background-color 100ms linear;
+
+    &:hover {
+        background-color: ${({ theme }) => transparentize(.8, theme.colors.primary)} 
+    }
+    
+    &:active
+    {
+        background-color: ${({ theme }) => transparentize(.3, theme.colors.primary)}
+    }    
 `;
 
 export const TemperatureIndicatorContainer = styled.div`

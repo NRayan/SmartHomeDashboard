@@ -21,7 +21,7 @@ export function SmartHomeContextProvider({ children }: Props) {
 	function handleRoomUpdate(room: roomType) {
 		const selectedRoom = rooms.find(x => x.id === room.id);
 		const index = selectedRoom && rooms.indexOf(selectedRoom);
-		if (!index) return;
+		if (index === undefined) return;
 		const newArr = [...rooms];
 		newArr[index] = room;
 		setRooms(newArr);
@@ -32,10 +32,9 @@ export function SmartHomeContextProvider({ children }: Props) {
 		const index = selectedRoom && rooms.indexOf(selectedRoom);
 		const newArr = [...rooms];
 		newArr.forEach(x => x.selected = false);
-		if (index != undefined) {
-			newArr[index].selected = true;
-			setRooms(newArr);
-		}
+		if (index === undefined) return;
+		newArr[index].selected = true;
+		setRooms(newArr);
 	}
 
 	return (

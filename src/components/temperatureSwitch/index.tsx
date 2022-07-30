@@ -26,7 +26,7 @@ export function TemperatureSwitch({ room }: props) {
 		<Container selected={selected} onClick={handleClick}>
 			<Header>
 				<SwitchLabel>{on ? "ON" : "OFF"}</SwitchLabel>
-				<Switch on={on} onSwitch={() => null} color={primary} />
+				<Switch on={on} color={primary} />
 			</Header>
 			<Icon color="#FFF" size="3rem" />
 			<Title>{title}</Title>
