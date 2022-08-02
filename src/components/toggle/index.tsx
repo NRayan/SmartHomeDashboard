@@ -1,5 +1,4 @@
 import { Container, Dot } from "./styles";
-// import ToggleComponent from "react-toggle";
 
 type props =
 	{
@@ -16,7 +15,7 @@ export function Toggle({ on, onChange, fillColor, disabledFillColor, dotColor }:
 
 	return (
 		<Container onClick={onChange} bgColor={fillBgColor} >
-			<Dot on={on} bgColor={dotColor} />
+			<Dot on={on} fillColor={fillBgColor} bgColor={dotColor} />
 		</Container>
 	);
 }

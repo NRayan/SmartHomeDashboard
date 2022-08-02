@@ -11,10 +11,10 @@ export { MoreButton } from "./moreButton";
 export { PageGrid } from "./pageGrid";
 export { Power } from "./power";
 export { SearchBar } from "./searchBar";
-export { Toolbar } from "./toolbar";
-export { Weather } from "./weather";
+export { TemperatureController } from "./temperatureController";
 export { Temperatures } from "./temperatures";
 export { TemperatureSwitch } from "./temperatureSwitch";
-export { TemperatureController } from "./temperatureController";
 export { Toggle } from "./toggle";
+export { Toolbar } from "./toolbar";
+export { Weather } from "./weather";
 
